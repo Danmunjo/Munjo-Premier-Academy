@@ -90,7 +90,7 @@ const [reportStudent, setReportStudent] = useState(null);
   const handleSimulateMpesa = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:8080/api/mpesa/c2b/confirm/', {
+      {import.meta.env.VITE_API_URL || 'http://localhost:8080/api/'}mpesa/c2b/confirm/ ({
         TransID: mpesaCode,
         TransAmount: parseFloat(mpesaAmount),
         BillRefNumber: mpesaAdm,
